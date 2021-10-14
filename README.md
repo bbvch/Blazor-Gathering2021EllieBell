@@ -43,12 +43,13 @@ Im Pairprogramming sollen Applikationen in 45min-Sprints erstellt werden. Die ge
 Bei einem 'Grand Mal Anfall' soll Ellie mit möglichst wenigen Eingaben über ihr Smartphone alarmieren können.
 
 #### Sprint 1
-Es ist ein digitale Glocke zu entwicklen, mit der Ellie einen Alarm auslösen kann.
+Es ist ein digitale Glocke zu entwicklen, mit der Ellie möglichst schnell und mit wenigen Handgriffen einen Alarm auslösen kann.
 
 #### Sprint 2
 Die zu alarmierenden Kontakte sollen konfiguriert und über's Netzwerk alarmiert werden können.
 
 #### Sprint 3
+Refactoring der App.
 
 ### Familien App
 Bei einem Alarm soll mindestens ein Famielienmitglied auch im Schlaf alarmiert werden. Damit dies Person dann Ellie helfen kann.
@@ -60,6 +61,7 @@ Ein eingehender Alarm soll auch Nachts die Familienmitglieder aufwecken.
 Ein Alarm soll empfangen und quittiert werden können.
 
 #### Sprint 3
+Refactoring der App.
 
 ### Arbeitgeber Info
 Ein definierten Kreis von Kontakten soll über den Anfall informiert werden. Diese Information ist nicht zeitkritisch. Optional ist eine Quittierung des Info.
