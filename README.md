@@ -1,4 +1,4 @@
-# Blazor-Gathering2021EllieBell   ![Blazor Symbol](./images/Blazor.png)
+# Blazor-Gathering2021EllieBell   ![Blazor Symbol](./images/Blazor.png =200x200)
 
 ## Ziel
 Das Ziel ist es Ausbildungsmodule für eine mögliche Blazor-Academy bei bbv Software Services zu finden.
