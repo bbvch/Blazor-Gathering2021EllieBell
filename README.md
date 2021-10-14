@@ -1,4 +1,4 @@
-# Blazor-Gathering2021EllieBell   ![Blazor Symbol](./images/Blazor.png =200x200)
+# Blazor Workshop Gathering2021   ![Blazor Symbol](./images/Blazor.png)
 
 ## Ziel
 Das Ziel ist es Ausbildungsmodule für eine mögliche Blazor-Academy bei bbv Software Services zu finden.
@@ -35,10 +35,9 @@ Ellie hat Epilepsie. Bei einem Grand Mal Anfall (Anfall betrifft ganzes Gehirn) 
 
 [Von Anfällen und Ameisen](https://www.bing.com/videos/search?q=epilepsie+Ameisen&&view=detail&mid=E2D7E8F14FB63F271D86E2D7E8F14FB63F271D86&&FORM=VRDGAR&ru=%2Fvideos%2Fsearch%3Fq%3Depilepsie%2520Ameisen%26qs%3Dn%26form%3DQBVR%26sp%3D-1%26pq%3Depilepsie%2520ameisen%26sc%3D1-17%26sk%3D%26cvid%3D2A2D58D72AD7410280421534A7C9EB42)
 
-[Die echte Ellie](https://myepicoach.ch/heute-finde-ich-es-cool-anders-zu-sein/)
 
 ## Aufgabe Ellieglöggli
-Im Pairprogramming sollen Applikationen in 45min-Sprints erstellt werden. Die gewonnen Erfahrungen werden nach jedem Sprint im Workshop geteilt. Der SourceCode wird in [github](https://github.com/bbvch/Blazor/Gathering2021/EllieAlarm) geteilt.
+Im Pairprogramming sollen Applikationen in 45min-Sprints erstellt werden. Die gewonnen Erfahrungen werden nach jedem Sprint im Workshop geteilt. Der SourceCode wird in [github](https://github.com/bbvch/Blazor-Gathering2021EllieBell) geteilt.
 
 ### Ellies App
 Bei einem 'Grand Mal Anfall' soll Ellie mit möglichst wenigen Eingaben über ihr Smartphone alarmieren können.
