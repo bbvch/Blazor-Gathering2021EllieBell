@@ -1,4 +1,4 @@
-# Blazor-Gathering2021EllieBell
+# Blazor-Gathering2021EllieBell   ![Blazor Symbol](./images/Blazor.png)
 
 ## Ziel
 Das Ziel ist es Ausbildungsmodule für eine mögliche Blazor-Academy bei bbv Software Services zu finden.
@@ -28,7 +28,7 @@ Das Ziel ist es Ausbildungsmodule für eine mögliche Blazor-Academy bei bbv Sof
 ## Ellie hat Epilepsie
 Ellie hat Epilepsie. Bei einem Grand Mal Anfall (Anfall betrifft ganzes Gehirn) ist sie auf Hilfe eines Familienmitglieds angewiesen. Ihre Anfälle kommen meistens in der Nacht. Daher hat Ellie eine Glocke auf ihrem Nachttisch, um die Familienmitglieder zu alarmieren. Da ohne weitere Massnahmen ein Anfall nicht zu Ende geht und durch die Heftigkeit der Körper schaden nehmen könnte, muss Ellie mit einem Nasenspray Valium spritzen. Das Valium nockt Ellie allerdings so aus, dass sie meistens am Folgetag nicht zur Arbeit kann. Die Abmachung mit dem Arbeitgeber besagt, dass Ellie in einem solchen Fall mehrere Personen in der Firma informiert.
 
-![Alarm APP](GrandMal.png)
+![Alarm APP](./images/GrandMal.png)
 
 
 [Weitere Infos zu Epilepsie](https://epi-suisse.ch/epilepsie/)
@@ -65,4 +65,4 @@ Ein Alarm soll empfangen und quittiert werden können.
 ### Arbeitgeber Info
 Ein definierten Kreis von Kontakten soll über den Anfall informiert werden. Diese Information ist nicht zeitkritisch. Optional ist eine Quittierung des Info.
 
-![Info an Arbeitgeber](InfoFirma.png)
+![Info an Arbeitgeber](./images/InfoFirma.png)
