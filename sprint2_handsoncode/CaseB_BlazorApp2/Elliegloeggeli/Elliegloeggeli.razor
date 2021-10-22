@@ -1,0 +1,22 @@
+﻿@page "/elli"
+@using CaseB_SharedLibrary
+
+@inject IEllieGloeggeliService elliegloeggli
+
+<h3>Elliglöggeli</h3>
+
+<div class="container">
+    <div class="row">
+        <button type="button" class="btn btn-primary col" @onclick="Subscribe">Subscribe</button>
+        <button type="button" class="btn btn-primary col" @onclick="Unsubscribe">Unsubscribe</button>
+    </div>
+    <div class="row">
+        <button type="button" class="btn btn-primary col" @onclick="Notify">Notify</button>
+    </div>
+    <div class="row">
+        <div class="row">
+            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" @bind="ServerResponse"></textarea>
+        </div>
+    </div>
+</div>
