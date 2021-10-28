@@ -17,13 +17,26 @@ Das Ziel ist es Ausbildungsmodule für eine mögliche Blazor-Academy bei bbv Sof
  * Sprint 3
     * Component
     * Data Sharing
-    * Lokalisierung
+    * [Lokalisierung](https://bunit.dev/)
+    * [Unittest](https://bunit.dev/) 
 * Abschluss Diskussion
     * Academy Ideen/Inhalt
+
+[bbv Blog: Hier kommt Blazor](https://www.bbv.ch/blazor/)
+
+[bbv Blog: Wie schlägt sich Blazor gegen Angular?](https://www.bbv.ch/blazor-2/)
+
+[bbv Blog: Blazor: Eine Alternative zu Angular, React und Co.?](https://www.bbv.ch/blazor-wechsel/)
+
+[bbv Webinar: Ist Blazoer eine echte Alternative?](https://bbv-ch.zoom.us/rec/play/TvinxeVeVw4X57l-saGMIhy3s4U-EXDJU6GHG-cnofzmJOr3HC_OBfjA4z_YyuYDuqjQGStzE-93MnW9.qjC_snYsCtkMIwl6)
 
 [Blazor University](https://blazor-university.com)
 
 [Awesome Blazor](https://github.com/AdrienTorris/awesome-blazor)
+
+[Blazing Pizza Tutorial](https://github.com/dotnet-presentations/blazor-workshop)
+
+[Blazor Spickzettel - Windows Developer 9.2020](./BlazorSpickzettel.pdf)
 
 ## Ellie hat Epilepsie
 Ellie hat Epilepsie. Bei einem Grand Mal Anfall (Anfall betrifft ganzes Gehirn) ist sie auf Hilfe eines Familienmitglieds angewiesen. Ihre Anfälle kommen meistens in der Nacht. Daher hat Ellie eine Glocke auf ihrem Nachttisch, um die Familienmitglieder zu alarmieren. Da ohne weitere Massnahmen ein Anfall nicht zu Ende geht und durch die Heftigkeit der Körper schaden nehmen könnte, muss Ellie mit einem Nasenspray Valium spritzen. Das Valium nockt Ellie allerdings so aus, dass sie meistens am Folgetag nicht zur Arbeit kann. Die Abmachung mit dem Arbeitgeber besagt, dass Ellie in einem solchen Fall mehrere Personen in der Firma informiert.
@@ -45,6 +58,7 @@ Bei einem 'Grand Mal Anfall' soll Ellie mit möglichst wenigen Eingaben über ih
 #### Sprint 1
 Es ist ein digitale Glocke zu entwicklen, mit der Ellie möglichst schnell und mit wenigen Handgriffen einen Alarm auslösen kann.
 
+
 #### Sprint 2
 Die zu alarmierenden Kontakte sollen konfiguriert und über's Netzwerk alarmiert werden können.
 
@@ -52,10 +66,10 @@ Die zu alarmierenden Kontakte sollen konfiguriert und über's Netzwerk alarmiert
 Refactoring der App.
 
 ### Familien App
-Bei einem Alarm soll mindestens ein Famielienmitglied auch im Schlaf alarmiert werden. Damit dies Person dann Ellie helfen kann.
+Bei einem Alarm soll mindestens ein Familienmitglied auch im Schlaf alarmiert werden, damit diese dann Ellie helfen kann.
 
 #### Sprint 1
-Ein eingehender Alarm soll auch Nachts die Familienmitglieder aufwecken.
+Ein eingehender Alarm soll (auch Nachts) die Familienmitglieder benachrichtigen(aufwecken).
 
 #### Sprint 2
 Ein Alarm soll empfangen und quittiert werden können.
@@ -67,3 +81,12 @@ Refactoring der App.
 Ein definierten Kreis von Kontakten soll über den Anfall informiert werden. Diese Information ist nicht zeitkritisch. Optional ist eine Quittierung des Info.
 
 ![Info an Arbeitgeber](./images/InfoFirma.png)
+
+#### Sprint 1
+Ein eingehender Alarm soll eine Benachrictigung anzeigen.
+
+#### Sprint 2
+Ein Alarm soll empfangen und quittiert werden können.
+
+#### Sprint 3
+Refactoring
