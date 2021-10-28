@@ -1,11 +1,15 @@
 ﻿using CaseB_SharedLibrary;
 using Grpc.Core;
+using Microsoft.AspNetCore.Components;
 using ProtoBuf.Grpc;
 
 namespace CaseB_BlazorApp2.Elliegloeggeli
 {
     public partial class Elliegloeggeli : IDisposable
     {
+        [Inject]
+        IEllieGloeggeliService elliegloeggli { get; set; } = null!;
+
         private volatile CancellationTokenSource? tokenSource;
 
         public string ServerResponse { get; set; } = string.Empty;
