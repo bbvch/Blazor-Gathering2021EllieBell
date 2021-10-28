@@ -1,4 +1,4 @@
-# Blazor-Gathering2021EllieBell   ![Blazor Symbol](./images/Blazor.png)
+# Blazor Workshop Gathering2021   ![Blazor Symbol](./images/Blazor.png)
 
 ## Ziel
 Das Ziel ist es Ausbildungsmodule für eine mögliche Blazor-Academy bei bbv Software Services zu finden.
@@ -50,19 +50,20 @@ Ellie hat Epilepsie. Bei einem Grand Mal Anfall (Anfall betrifft ganzes Gehirn) 
 
 
 ## Aufgabe Ellieglöggli
-Im Pairprogramming sollen Applikationen in 45min-Sprints erstellt werden. Die gewonnen Erfahrungen werden nach jedem Sprint im Workshop geteilt. Der SourceCode wird in [github](https://github.com/bbvch/Blazor/Gathering2021/EllieAlarm) geteilt.
+Im Pairprogramming sollen Applikationen in 45min-Sprints erstellt werden. Die gewonnen Erfahrungen werden nach jedem Sprint im Workshop geteilt. Der SourceCode wird in [github](https://github.com/bbvch/Blazor-Gathering2021EllieBell) geteilt.
 
 ### Ellies App
 Bei einem 'Grand Mal Anfall' soll Ellie mit möglichst wenigen Eingaben über ihr Smartphone alarmieren können.
 
 #### Sprint 1
-Es ist eine digitale Glocke zu entwicklen, mit der Ellie einen Alarm auslösen kann.
+Es ist ein digitale Glocke zu entwicklen, mit der Ellie möglichst schnell und mit wenigen Handgriffen einen Alarm auslösen kann.
+
 
 #### Sprint 2
 Die zu alarmierenden Kontakte sollen konfiguriert und über's Netzwerk alarmiert werden können.
 
 #### Sprint 3
-Refactoring
+Refactoring der App.
 
 ### Familien App
 Bei einem Alarm soll mindestens ein Familienmitglied auch im Schlaf alarmiert werden, damit diese dann Ellie helfen kann.
@@ -74,7 +75,7 @@ Ein eingehender Alarm soll (auch Nachts) die Familienmitglieder benachrichtigen(
 Ein Alarm soll empfangen und quittiert werden können.
 
 #### Sprint 3
-Refactoring
+Refactoring der App.
 
 ### Arbeitgeber Info
 Ein definierten Kreis von Kontakten soll über den Anfall informiert werden. Diese Information ist nicht zeitkritisch. Optional ist eine Quittierung des Info.

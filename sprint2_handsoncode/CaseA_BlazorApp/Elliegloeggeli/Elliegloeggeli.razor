@@ -1,0 +1,11 @@
+﻿@page "/elli"
+
+@inject EllieGloeggeli.EllieGloeggeliClient elliegloeggli
+
+<h3>Elliglöggeli</h3>
+
+<button @onclick="Subscribe">Subscribe</button>
+<button @onclick="Unsubscribe">Unsubscribe</button>
+<button @onclick="Notify">Notify</button>
+
+<textarea @bind="ServerResponse"></textarea>
