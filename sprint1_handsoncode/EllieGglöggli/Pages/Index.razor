@@ -1,0 +1,35 @@
+﻿@page "/"
+@inject AlarmService alarmService
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<div class="row">
+<div class="col-8">
+	<button class="btn btn-primary" @onclick="FireAlarmAsync">
+		<p>
+			Alarm
+		</p>
+		<img src="pngtree-bell-png-clipart_1395158.jpg " />
+	</button>
+</div>
+<div class="col-4">
+	<EditForm Model="AlarmSent">
+		<InputTextArea class="form-control" @bind-Value="alarmService.AlarmSent" style="height:700px;" />
+	</EditForm>
+</div>
+</div>
+
+@code{
+	public string AlarmSent => alarmService.AlarmSent;
+
+	private async Task FireAlarmAsync()
+	{
+		await alarmService.SendAlarmAsync();
+	}
+}
