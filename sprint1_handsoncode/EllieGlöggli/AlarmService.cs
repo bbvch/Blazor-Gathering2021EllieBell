@@ -1,4 +1,7 @@
-﻿namespace EllieGglöggli
+﻿using System;
+using System.Threading.Tasks;
+
+namespace EllieGlöggli
 {
     public class AlarmService
     {

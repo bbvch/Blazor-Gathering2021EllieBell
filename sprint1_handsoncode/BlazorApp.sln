@@ -1,12 +1,11 @@
 ﻿
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31825.309
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EllieGglöggli", "EllieGglöggli\EllieGglöggli.csproj", "{3A9A6B7B-F68D-4E59-9EA0-60B98FB50B94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EllieGlöggli", "EllieGlöggli\EllieGlöggli.csproj", "{3A9A6B7B-F68D-4E59-9EA0-60B98FB50B94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EllieFamilie", "EllieFamilie\EllieFamilie.csproj", "{009C65FD-8D06-4B4B-8BD1-DB72F2E3F881}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EllieFamilie", "EllieFamilie\EllieFamilie.csproj", "{009C65FD-8D06-4B4B-8BD1-DB72F2E3F881}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,4 +29,3 @@ Global
 		SolutionGuid = {DB590008-F3AA-4261-BE80-FB4783917BB2}
 	EndGlobalSection
 EndGlobal
-

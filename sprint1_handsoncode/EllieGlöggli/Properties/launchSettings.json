@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "EllieGgloeggli": {
+    "EllieGloeggli": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
