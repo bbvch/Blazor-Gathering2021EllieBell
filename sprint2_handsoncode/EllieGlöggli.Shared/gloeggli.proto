@@ -19,6 +19,7 @@ message EmptyMessage {}
 
 message GloeggliNotification {	
 	int32 senderClientId = 1;
+	string name = 2;
 }
 
 message GloeggeliRequest {	

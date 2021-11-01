@@ -5,31 +5,40 @@ namespace EllieFamilie.Notification
 {
     public partial class AlarmNotification : IAsyncDisposable
     {
-        private const int FamilieMemberClientId = 1002;
-        private readonly System.Text.StringBuilder stringBuilder = new System.Text.StringBuilder();
+        private readonly System.Text.StringBuilder stringBuilder = new();
         private bool isPlaySound = false;
 
         [Inject]
         private AlarmService AlarmService { get; set; }
 
         private string ServerResponse { get; set; } = string.Empty;
+        private UserInfo UserInfo { get; set; } = new UserInfo();
 
         protected override async Task OnInitializedAsync()
         {
-            Subscribe();
+            await Subscribe();
             await base.OnInitializedAsync();
         }
 
         public async ValueTask DisposeAsync()
         {
+            GC.SuppressFinalize(this);
             await Unsubscribe();
         }
 
-        public void Subscribe()
+        public async Task Subscribe()
         {
+            if (await localStore.ContainKeyAsync(nameof(UserInfo.Name)))
+            {
+                UserInfo.Name = await localStore.GetItemAsync<string>(nameof(UserInfo.Name));
+            }
+            if (await localStore.ContainKeyAsync(nameof(UserInfo.Id)))
+            {
+                UserInfo.Id = await localStore.GetItemAsync<int>(nameof(UserInfo.Id));
+            }
             AlarmService.StateChanged += AlarmService_StateChanged;
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-            AlarmService.Subscribe(new RegisterRequest { ClientId = FamilieMemberClientId, Name = "Viktor" });
+            AlarmService.Subscribe(new RegisterRequest { ClientId = UserInfo.Id, Name = UserInfo.Name });
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
 
@@ -40,7 +49,7 @@ namespace EllieFamilie.Notification
 
         public async Task Unsubscribe()
         {
-            await AlarmService.Unsubscribe(new RegisterRequest { ClientId = FamilieMemberClientId });
+            await AlarmService.Unsubscribe(new RegisterRequest { ClientId = UserInfo.Id });
             AlarmService.StateChanged -= AlarmService_StateChanged;
         }
 

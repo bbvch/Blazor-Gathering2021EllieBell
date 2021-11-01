@@ -7,7 +7,7 @@ namespace EllieGlöggli.Common
         public delegate void StateChangedHandler(object sender, ResponseEventArgs e);
         public event StateChangedHandler? StateChanged;
 
-        private volatile CancellationTokenSource tokenSource = new CancellationTokenSource();
+        private volatile CancellationTokenSource tokenSource = new();
 
         private readonly EllieGloeggeli.EllieGloeggeliClient ellieGlöggli;
 
@@ -31,7 +31,7 @@ namespace EllieGlöggli.Common
                 var items = streamingCall.ResponseStream.ReadAllAsync(tokenSource.Token).ConfigureAwait(false);
                 await foreach (var item in items)
                 {
-                    WriteResponse($"Notification Recieved from {item.SenderClientId}");
+                    WriteResponse($"Notification Recieved from {item.SenderClientId} ({item.Name})");
                 }
             }
             catch (RpcException ex) when (ex.StatusCode == StatusCode.Cancelled)

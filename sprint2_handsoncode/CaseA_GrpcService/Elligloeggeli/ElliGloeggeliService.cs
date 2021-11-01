@@ -17,13 +17,13 @@ namespace CaseA_GrpsService.Elligloeggeli
             var queue = new AwaitableSenderQueue();
             var cts = new CancellationTokenSource();
 
-            var subscriberRegistered = Subscribers.TryAdd(subscriber, new SubscriberData(cts, queue));
+            var subscriberRegistered = Subscribers.TryAdd(subscriber, new SubscriberData(cts, queue, request.Name));
 
             var token = cts.Token;
             while (subscriberRegistered && token.IsCancellationRequested == false)
             {
                 var sender = await queue.DequeueAsync(token).ConfigureAwait(false);
-                await responseStream.WriteAsync(new GloeggliNotification { SenderClientId = sender.SenderId }).ConfigureAwait(false);
+                await responseStream.WriteAsync(new GloeggliNotification { SenderClientId = sender.SenderId, Name = sender.Name }).ConfigureAwait(false);
 
                 Console.WriteLine($"{nameof(PublishGloeggeli)}: Notification sent to {context.Peer} with senderId {sender.SenderId}");
             }
@@ -38,9 +38,11 @@ namespace CaseA_GrpsService.Elligloeggeli
             Console.WriteLine($"{nameof(PublishGloeggeli)}: Request from {context.Host} with clientId {request.SenderClientId}");
 
 
+            var name = Subscribers[new Subscriber(request.SenderClientId)].name;
+            var message = new Sender(request.SenderClientId, name);
             foreach (var (_, data) in Subscribers.ToList())
             {
-                data.Queue.Enqueue(new Sender(request.SenderClientId));
+                data.Queue.Enqueue(message);
             }
 
             return new EmptyMessage();
@@ -62,8 +64,8 @@ namespace CaseA_GrpsService.Elligloeggeli
         }
 
         private record struct Subscriber(int SubscriberId);
-        private record struct Sender(int SenderId);
-        private record class SubscriberData(CancellationTokenSource CancellationTokenSource, AwaitableSenderQueue Queue);
+        private record struct Sender(int SenderId, string Name);
+        private record class SubscriberData(CancellationTokenSource CancellationTokenSource, AwaitableSenderQueue Queue, string name);
         private class AwaitableSenderQueue
         {
             private readonly Queue<Sender> queue = new Queue<Sender>();
