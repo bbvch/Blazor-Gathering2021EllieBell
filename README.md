@@ -60,7 +60,7 @@ Es ist ein digitale Glocke zu entwicklen, mit der Ellie möglichst schnell und m
 
 
 #### Sprint 2
-Die zu alarmierenden Kontakte sollen konfiguriert und über's Netzwerk alarmiert werden können.
+Die zu alarmierenden Kontakte sollen angezeigt und über's Netzwerk alarmiert werden können.
 
 #### Sprint 3
 Refactoring der App.
