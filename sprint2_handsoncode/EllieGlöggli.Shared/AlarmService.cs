@@ -60,6 +60,12 @@ namespace EllieGlöggli.Common
             await ellieGlöggli.PublishGloeggeliAsync(gloeggeliRequest);
         }
 
+        public async Task<IReadOnlyCollection<RegisterRequest>> GetRegisteredAsync()
+        {
+            var list = await ellieGlöggli.GetRegisteredAsync(new EmptyMessage());
+            return list.Registered;
+        }
+
         private void WriteResponse(string response)
         {
             StateChanged?.Invoke(this, new ResponseEventArgs { Response = response });

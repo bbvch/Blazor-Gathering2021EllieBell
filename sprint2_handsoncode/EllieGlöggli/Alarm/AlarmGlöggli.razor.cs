@@ -21,6 +21,7 @@ namespace EllieGlöggli.Alarm
 
         public async ValueTask DisposeAsync()
         {
+            GC.SuppressFinalize(this);
             await Unsubscribe();
         }
 

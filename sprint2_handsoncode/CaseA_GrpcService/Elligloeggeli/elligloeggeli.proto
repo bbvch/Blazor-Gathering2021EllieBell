@@ -8,6 +8,7 @@ service EllieGloeggeli {
 	rpc SubscribeForGloeggli(RegisterRequest) returns (stream GloeggliNotification);
 	rpc UnsubscribeForGloeggli(RegisterRequest) returns (EmptyMessage);
 	rpc PublishGloeggeli(GloeggeliRequest) returns (EmptyMessage);
+	rpc GetRegistered(EmptyMessage) returns (RegisteredResponse);
 }
 
 message RegisterRequest{
@@ -26,4 +27,6 @@ message GloeggeliRequest {
 	int32 senderClientId = 1;
 }
 
-
+message RegisteredResponse{
+	repeated RegisterRequest registered = 1;
+}

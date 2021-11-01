@@ -1,5 +1,7 @@
 ﻿using Grpc.Core;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace CaseA_GrpsService.Elligloeggeli
 {
@@ -56,6 +58,17 @@ namespace CaseA_GrpsService.Elligloeggeli
             Unsubscribe(subscriber);
 
             return Task.FromResult(new EmptyMessage());
+        }
+
+        public override Task<RegisteredResponse> GetRegistered(EmptyMessage _, ServerCallContext context)
+        {
+            Console.WriteLine(nameof(GetRegistered));
+
+            var list = Subscribers.Select(x => new RegisterRequest { ClientId= x.Key.SubscriberId, Name = x.Value.name }).ToList();
+            var result = new RegisteredResponse();
+            result.Registered.AddRange(list);
+
+            return Task.FromResult(result);
         }
 
         private static void Unsubscribe(Subscriber subscriber)
