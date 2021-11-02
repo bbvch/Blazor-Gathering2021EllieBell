@@ -17,7 +17,7 @@ Das Ziel ist es Ausbildungsmodule für eine mögliche Blazor-Academy bei bbv Sof
  * Sprint 3
     * Component
     * Data Sharing
-    * [Lokalisierung](https://bunit.dev/)
+    * [Lokalisierung](https://github.com/jsakamoto/Toolbelt.Blazor.I18nText)
     * [Unittest](https://bunit.dev/) 
 * Abschluss Diskussion
     * Academy Ideen/Inhalt
