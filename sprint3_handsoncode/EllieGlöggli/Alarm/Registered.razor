@@ -1,0 +1,22 @@
+﻿@page "/registered"
+
+<h3>Registered Users</h3>
+
+	<table>
+		<thead>
+			<tr>
+				<th class="col-1">ID</th>
+				<th class="col-4">Name</th>
+			</tr>
+		</thead>
+
+		<tbody>
+		@foreach(var item in Users)
+		{
+			<tr>
+				<td>@item.ClientId</td>
+				<td>@item.Name</td>
+			</tr>
+		}
+		</tbody>
+	</table>

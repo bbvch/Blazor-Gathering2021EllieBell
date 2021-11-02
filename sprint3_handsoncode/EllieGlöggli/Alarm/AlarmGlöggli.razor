@@ -1,0 +1,19 @@
+﻿@page "/alarm"
+
+<h3 style="color:beige;" >AlarmGlöggli</h3>
+
+<div class="row">
+<div class="col-7">
+	<button class="btn btn-danger" @onclick="FireAlarmAsync">
+		<p>
+			Alarm
+		</p>
+		<img src="pngtree-bell-png-clipart_1395158.jpg " />
+	</button>
+</div>
+<div class="col-5">
+	<EditForm Model="ServerResponse">
+		<InputTextArea class="form-control" @bind-Value="ServerResponse" style="height:700px; background-color:black; color:beige;" />
+	</EditForm>
+</div>
+</div>
