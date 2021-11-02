@@ -1,4 +1,5 @@
 ﻿using EllieGlöggli.Common;
+using EllieGlöggli.Common.Admin;
 using Microsoft.AspNetCore.Components;
 
 namespace EllieFamilie.Notification
@@ -10,6 +11,9 @@ namespace EllieFamilie.Notification
 
         [Inject]
         private AlarmService AlarmService { get; set; }
+
+        [Inject]
+        public UserInfoService UserInfoService { get; set; }
 
         private string ServerResponse { get; set; } = string.Empty;
         private UserInfo UserInfo { get; set; } = new UserInfo();
@@ -28,14 +32,8 @@ namespace EllieFamilie.Notification
 
         public async Task Subscribe()
         {
-            if (await localStore.ContainKeyAsync(nameof(UserInfo.Name)))
-            {
-                UserInfo.Name = await localStore.GetItemAsync<string>(nameof(UserInfo.Name));
-            }
-            if (await localStore.ContainKeyAsync(nameof(UserInfo.Id)))
-            {
-                UserInfo.Id = await localStore.GetItemAsync<int>(nameof(UserInfo.Id));
-            }
+            UserInfo = await UserInfoService.LoadAsync();
+
             AlarmService.StateChanged += AlarmService_StateChanged;
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
             AlarmService.Subscribe(new RegisterRequest { ClientId = UserInfo.Id, Name = UserInfo.Name });

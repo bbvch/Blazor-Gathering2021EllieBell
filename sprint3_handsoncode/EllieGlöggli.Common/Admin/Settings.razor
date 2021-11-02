@@ -1,0 +1,28 @@
+﻿@page "/config"
+@inject IStringLocalizer<Settings> Localizer
+
+<h3>@Localizer["***Title"]</h3>
+
+<EditForm Model="UserInfo">
+<div class="row">
+	<div class="col-1 px-3 py-1 fw-bold">
+		<label>Id</label>
+	</div>
+	<div class="col-10 px-3">
+		<InputNumber id="clientId" class="form-control" @bind-Value="UserInfo.Id" />
+	</div>
+</div>
+<div class="row">
+	<div class="col-1 px-3 py-1 fw-bold">
+		<label>Name</label>
+	</div>
+	<div class="col-10 px-3">
+		<InputText id="clientName" class="form-control" @bind-Value="UserInfo.Name" />
+	</div>
+</div>
+</EditForm>
+
+<div class="col py-3">
+	<button id="save" class="btn btn-success" @onclick="UpdateLocalStorage">@Localizer["buttonSave"]</button>
+	<button id="clear" class="btn btn-danger" @onclick="ClearLocalStorage">@Localizer["buttonClear"]</button>
+</div>

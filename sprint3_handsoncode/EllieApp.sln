@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EllieGlöggli.Common", "Ell
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EllieGlöggliTests", "EllieGlöggliTests\EllieGlöggliTests.csproj", "{126DAB32-6B74-4A31-A422-72ACA05CE364}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EllieFamilieTests", "EllieFamilieTests\EllieFamilieTests.csproj", "{98E5D6A5-3217-4A52-A3A3-CAE5D608496F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EllieFamilieTests", "EllieFamilieTests\EllieFamilieTests.csproj", "{98E5D6A5-3217-4A52-A3A3-CAE5D608496F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
