@@ -1,7 +1,8 @@
 ﻿@page "/config"
 @inject Blazored.LocalStorage.ILocalStorageService localStore
+@inject IStringLocalizer<Settings> Localizer
 
-<h3>Einstellungen</h3>
+<h3>@Localizer["***Title"]</h3>
 
 <EditForm Model="UserInfo">
 <div class="row">
@@ -23,6 +24,6 @@
 </EditForm>
 
 <div class="col py-3">
-	<button id="save" class="btn btn-success" @onclick="UpdateLocalStorage">Save</button>
-	<button id="clear" class="btn btn-danger" @onclick="ClearLocalStorage">Clear</button>
+	<button id="save" class="btn btn-success" @onclick="UpdateLocalStorage">@Localizer["buttonSave"]</button>
+	<button id="clear" class="btn btn-danger" @onclick="ClearLocalStorage">@Localizer["buttonClear"]</button>
 </div>
