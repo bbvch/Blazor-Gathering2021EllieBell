@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option csharp_namespace = "CaseA_GrpsService";
+
+package EllieGloeggeli;
+
+service EllieGloeggeli {
+	rpc SubscribeForGloeggli(RegisterRequest) returns (stream GloeggliNotification);
+	rpc UnsubscribeForGloeggli(RegisterRequest) returns (EmptyMessage);
+	rpc PublishGloeggeli(GloeggeliRequest) returns (EmptyMessage);
+	rpc GetRegistered(EmptyMessage) returns (RegisteredResponse);
+}
+
+message RegisterRequest{
+	int32 clientId = 1;
+	string name = 2;
+}
+
+message EmptyMessage {}
+
+message GloeggliNotification {	
+	int32 senderClientId = 1;
+	string name = 2;
+}
+
+message GloeggeliRequest {	
+	int32 senderClientId = 1;
+}
+
+message RegisteredResponse{
+	repeated RegisterRequest registered = 1;
+}

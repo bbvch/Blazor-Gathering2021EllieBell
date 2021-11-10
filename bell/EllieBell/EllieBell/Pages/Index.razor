@@ -5,9 +5,13 @@
 
 <h1>Glöggli</h1>
 
+<button class="btn btn-secondary" disabled="@isSubscribed" @onclick="Subscribe">Subscribe</button>
+<button class="btn btn-secondary" disabled="@IsUnsubscribed" @onclick="Unsubscribe">Unsubscribe</button>
+
 <button class="btn btn-primary" disabled="@isBellActivated" @onclick="ActivateBell">Alarm auslösen!</button>
 
 @code {
+	private bool isSubscribed;
 	private bool isBellActivated = false;
 
 	private async Task ActivateBell()
@@ -15,4 +19,19 @@
 		await alarmService.SendAlarmAsync();
 		isBellActivated = true;
 	}
+
+	private bool IsUnsubscribed => !isSubscribed;
+
+	private void Subscribe()
+	{
+		alarmService.Subscribe();
+		isSubscribed = true;
+	}
+
+	private void Unsubscribe()
+	{
+		alarmService.Unsubscribe();
+		isSubscribed = false;
+	}
+
 }
