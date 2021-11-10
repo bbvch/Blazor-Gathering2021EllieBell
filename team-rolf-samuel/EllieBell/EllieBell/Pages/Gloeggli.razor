@@ -1,0 +1,19 @@
+﻿@page "/gloeggli"
+
+@inject EllieBell.Services.GloeggliService service
+@inject EllieBell.EllieGloeggeli.EllieGloeggeliClient client
+
+<PageTitle>Glöggli</PageTitle>
+
+<h3>Glöggli</h3>
+
+<button class="btn btn-primary" @onclick="() => client.SubscribeForGloeggli(new RegisterRequest { ClientId = 9999 })">Subscribe</button>
+<button class="btn btn-primary" @onclick="() => client.UnsubscribeForGloeggli(new RegisterRequest { ClientId = 9999 })">Unsubscribe</button>
+<button class="btn btn-primary" @onclick="async () => await client.PublishGloeggeliAsync(new GloeggeliRequest { SenderClientId = 9999 })">Ring Glöggli</button>
+
+@*<ul>
+	@foreach (var m in service.Messages)
+	{
+	<li>@m</li>
+	}
+	</ul>*@
