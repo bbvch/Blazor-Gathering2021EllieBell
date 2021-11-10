@@ -1,0 +1,26 @@
+﻿@page "/alarm"
+
+<PageTitle>Eltern Alarm</PageTitle>
+
+<h1>Ellie Alarm</h1>
+
+<p role="status">Alarm state: @alarmState</p>
+
+<button class="btn btn-primary" @onclick="ToggleAlarm">Toggle alarm</button>
+
+@code {
+    private string alarmState = "Off";
+
+    private void ToggleAlarm()
+    {
+        if(alarmState == "Off")
+        {
+            alarmState = "On";
+        }
+        else
+        {
+            alarmState = "Off";
+
+        }
+    }
+}
