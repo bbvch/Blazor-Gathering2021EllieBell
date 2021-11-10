@@ -1,0 +1,18 @@
+﻿@page "/"
+@inject AlarmService alarmService
+
+<PageTitle>Index</PageTitle>
+
+<h1>Glöggli</h1>
+
+<button class="btn btn-primary" disabled="@isBellActivated" @onclick="ActivateBell">Alarm auslösen!</button>
+
+@code {
+	private bool isBellActivated = false;
+
+	private async Task ActivateBell()
+	{
+		await alarmService.SendAlarmAsync();
+		isBellActivated = true;
+	}
+}
