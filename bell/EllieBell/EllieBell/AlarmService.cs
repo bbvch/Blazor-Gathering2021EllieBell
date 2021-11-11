@@ -11,60 +11,66 @@
 
         private readonly EllieGloeggeli.EllieGloeggeliClient grpcClient;
 
+        private StringBuilder stringbuider = new StringBuilder();
+
+        private RegisterRequest ellieRequest = new RegisterRequest { ClientId = 1, Name = "Ellie" };
+
+        private string ServerResponse { get; set; } = string.Empty;
+
+
         public AlarmService(EllieGloeggeli.EllieGloeggeliClient grpcClient)
         {
             this.grpcClient = grpcClient;
         }
-            public string AlarmSent { get; set; } = string.Empty;
 
-            public async Task SendAlarmAsync()
-            {
+        public string AlarmSent { get; set; } = string.Empty;
 
-                await this.grpcClient.PublishGloeggeliAsync(new GloeggeliRequest { SenderClientId = ClientId });
-                AlarmSent += $"{DateTime.Now.ToShortTimeString()} Alarm sent to: 'local'{Environment.NewLine}";
-                
-                await Task.CompletedTask;
-            }
+        public async Task SendAlarmAsync()
+        {
 
-            private StringBuilder stringbuider = new StringBuilder();
-            private RegisterRequest ellieRequest;
+            await this.grpcClient.PublishGloeggeliAsync(new GloeggeliRequest { SenderClientId = ClientId });
+            AlarmSent += $"{DateTime.Now.ToShortTimeString()} Alarm sent to: 'local'{Environment.NewLine}";
 
-            private string ServerResponse { get; set; } = string.Empty;
-            public async Task Subscribe()
-            {
-                this.ellieRequest = new RegisterRequest { ClientId = 1, Name = "Ellie" };
-                AsyncServerStreamingCall<GloeggliNotification> streamingCall = this.grpcClient.SubscribeForGloeggli(this.ellieRequest);
-
-                try
-                {
-                    var items = streamingCall.ResponseStream.ReadAllAsync().ConfigureAwait(false);
-                    await foreach (var item in items)
-                    {
-                        this.WriteResponse($"Notification received from {item.SenderClientId}{Environment.NewLine}");
-                    }
-                }
-                catch (RpcException e) when(e.StatusCode == StatusCode.Cancelled)
-                {
-                    WriteResponse("Unsubscription successful");
-                }
-                catch (OperationCanceledException)
-                {
-                    WriteResponse("Unsubscription successful");
-                }
+            await Task.CompletedTask;
         }
 
-            private void WriteResponse(string response)
+        
+        public async Task Subscribe()
+        {
+
+            AsyncServerStreamingCall<GloeggliNotification> streamingCall = this.grpcClient.SubscribeForGloeggli(this.ellieRequest);
+
+            try
             {
-                lock (this.stringbuider)
+                var items = streamingCall.ResponseStream.ReadAllAsync().ConfigureAwait(false);
+                await foreach (var item in items)
                 {
-                    this.stringbuider.AppendLine($"{DateTime.Now.Ticks}: {response}");
-                    ServerResponse = this.stringbuider.ToString();
+                    this.WriteResponse($"Notification received from {item.SenderClientId}{Environment.NewLine}");
                 }
             }
-
-            public async Task Unsubscribe()
+            catch (RpcException e) when (e.StatusCode == StatusCode.Cancelled)
             {
-                await this.grpcClient.UnsubscribeForGloeggliAsync(this.ellieRequest);
+                WriteResponse("Unsubscription successful");
             }
+            catch (OperationCanceledException)
+            {
+                WriteResponse("Unsubscription successful");
+            }
+        }
+
+        private void WriteResponse(string response)
+        {
+            lock (this.stringbuider)
+            {
+                this.stringbuider.AppendLine($"{DateTime.Now.Ticks}: {response}");
+                ServerResponse = this.stringbuider.ToString();
+            }
+        }
+
+        public async Task Unsubscribe()
+        {
+            await this.grpcClient.UnsubscribeForGloeggliAsync(this.ellieRequest);
+            WriteResponse($"Unsubscription sent {Environment.NewLine}");
+        }
     }
 }
