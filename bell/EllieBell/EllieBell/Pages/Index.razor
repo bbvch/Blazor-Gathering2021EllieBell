@@ -22,16 +22,15 @@
 
 	private bool IsUnsubscribed => !isSubscribed;
 
-	private void Subscribe()
+	private async Task Subscribe()
 	{
-		alarmService.Subscribe();
+		await alarmService.Subscribe();
 		isSubscribed = true;
 	}
 
-	private void Unsubscribe()
+	private async Task Unsubscribe()
 	{
-		alarmService.Unsubscribe();
+		await alarmService.Unsubscribe();
 		isSubscribed = false;
 	}
-
 }
